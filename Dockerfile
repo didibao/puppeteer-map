@@ -16,11 +16,6 @@ RUN apt-get update && \
     apt-get install -y chromium && \
     apt-get clean
 
-COPY src/puppeteer /project
-COPY tsconfig.json /tsconfig.json
-
-WORKDIR /project
-
 RUN npm install
 
 ENTRYPOINT ["node", "dist/index.js"]
